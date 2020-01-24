@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Airlines</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+.w3-btn {width:150px;}
+
+
+
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color:  #a9a9a9;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+th, td {
+  padding: 5px;
+}
+</style>
+
+
+
+
+
+
+  <link rel="stylesheet" href="page.css">
+</head>
+<body style="background-color: gray">
+<div class="lol">
+<nav class="navbar navbar-default" style="background:#8988cc" >
+  
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+
+      <div class="container">
+  <div></div>
+  <form>
+    
+    <label class="radio-inline">
+      <input type="radio" name="optradio">One-Way
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Round Trip
+    </label>
+  </form>
+</div>
+
+
+
+
+      <li class="active"><div class="form-group" style="padding:5px;">
+    <label for="inputlg">From</label>
+    <input class="form-control input-lg" id="inputlg" type="text"  placeholder="Delhi">
+  </div></a></li>
+
+      <li><div class="form-group" style="padding:5px;">
+    <label for="inputlg">TO</label>
+    <input class="form-control input-lg" id="inputlg" type="text" placeholder="mumbai">
+  </div></li>
+    
+      <li><div class="form-group" style="padding:5px;">
+    <label for="inputlg">Departure Date</label>
+    <input class="form-control input-lg" id="inputlg" type="text" placeholder="Thu , 16 Jan">
+  </div></li>
+
+      <li><div class="form-group" style="padding:5px;">
+    <label for="inputlg">Return Date</label>
+    <input class="form-control input-lg" id="inputlg" type="text" placeholder="Sat , 18 Jan">
+  </div></li>
+    </ul>
+
+    <li><div class="form-group"   style="padding:5px;">
+    <label for="inputlg"></label>
+    <p><button class="w3-button w3-black w3-round-large">Search</button></p>
+  </div></li>
+    
+
+
+    
+  
+  </div>
+
+</nav>
+
+</div>
+
+
+
+<div class="sidebar">
+  <li class="active"><div class="form-group">
+    <label for="inputlg">DEPARTURE</label>
+    <input class="form-control input-lg" id="inputlg" type="text"  placeholder="4pm - 11am">
+  </div></a></li>
+     
+      <li><div class="form-group"">
+    <label for="inputlg">RETURN</label>
+    <input class="form-control input-lg" id="inputlg" type="text" placeholder="4pm - 11am">
+  </div></li>
+  <div data-role="rangeslider">
+  <label for="price-min">Onward Price:</label>
+  <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+  <label for="price-max">Return Price:</label><br>
+  <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+  <label for="price-min">Onward Duration</label><br>
+  <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+  <label for="price-max">Return Duration</label><br>
+  <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+</div>
+
+<h4>Preferred Airlines</h4>
+<div class="checkbox">
+<label><input type="checkbox" value="">Air India &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; rs. 10,607</label>
+</div>
+<div class="checkbox">
+<label><input type="checkbox" value="">IndiGO &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; rs. 10,600</label>
+</div>
+<div class="checkbox disabled">
+<label><input type="checkbox" value="" disabled>Air Asia &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; rs. 10,567</label>
+</div>
+<div class="checkbox">
+<label><input type="checkbox" value="">GoAir &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  rs. 10,500</label>
+</div>
+<div class="checkbox">
+<label><input type="checkbox" value="">SpiceJet &nbsp; &nbsp;&nbsp;&nbsp; rs. 10,588</label>
+</div>
+<div class="checkbox disabled">
+<label><input type="checkbox" value="" disabled>Vistra &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; rs. 10,786</label>
+</div>
+</div>
+
+<div class="content col-sm-10">
+  <div class="container col-sm-12">
+  <table cellpadding="20">
+    Fare Calender
+    <tr>
+      
+      <div class="col-sm-12" align="left" style="color:#303336;background-color:#f1f1f1;border-radius: 30px;border-radius: 5px;"><br>
+        <p><b>Your Selection</b></p>
+        <div class="col-sm-1" align="center"> Air India<br><br>Partially refandable</div>
+        <div class="col-sm-1" align="center"> Dell<br>051;45</div>
+        <div class="col-sm-1" align="center"> 2H 10M<br>Non stop</div>
+        <div class="col-sm-1" align="center"> Bom<br>07:55</div>
+        <div class="col-sm-1" align="center"> Air India<br><br>Partially refandable</div>
+        <div class="col-sm-1" align="center"> Dell<br>051;45</div>
+        <div class="col-sm-1" align="center"> 2H 10M<br>Non stop</div>
+        <div class="col-sm-1" align="center"> Bom<br>07:55</div>
+        <div class="col-sm-1" align="center"> RS.10,667<br>No cost EMI <br>@Rs.3,556</div>
+        <div class="col-sm-1" align="right">
+          <button type="button" class="btn btn-primary">Book</button>
+        </div><br>
+        
+       </div>
+        </div><br>
+        
+                              </div>
+      </div><br>
+    </tr>
+    <b>Round Trip Offers</b>
+    <tr>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+        <div class="col-sm-2" align="left"> Rs.10667</div>
+        <div class="col-sm-2" align="center"> <img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\dubai-international-airport-logo.png" width="80%"></div>
+        <div class="col-sm-2" align="right"> Dubai_International </div>
+      </div><br>
+      
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+        <div class="col-sm-2" align="left"> Rs.10667   </div>
+        <div class="col-sm-2" align="center"> <img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\swiss-international-air-lines-logo.png" width="80%"></div>
+        <div class="col-sm-2" align="right"> Swiss_International </div>
+      </div><br>                
+    </td>
+    </tr>
+    
+    <tr>
+      
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+        <div class="col-sm-2" align="center"> &nbsp;</div>
+        <div class="col-sm-2" align="center"> Departure</div>
+      <div class="col-sm-2" align="center"> Duration<br></div>
+      <div class="col-sm-2" align="center"> Arrival<br></div>
+      <div class="col-sm-2" align="center"> Price<br></div>
+      </div><br>
+      
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+        <div class="col-sm-2" align="center"> &nbsp;</div>
+        <div class="col-sm-2" align="center"> Departure</div>
+      <div class="col-sm-2" align="center"> Duration<br></div>
+      <div class="col-sm-2" align="center"> Arrival<br></div>
+      <div class="col-sm-2" align="center"> Price<br></div>
+      </div><br>
+      
+      
+                            
+    </td>
+    </tr>
+
+
+
+    
+    <tr>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+      <div class="col-sm-2" align="center"> Swiss International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\swiss-international-air-lines-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>07:55</div>
+      <div class="col-sm-2" align="center"> rs 5676 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="first"><br><br>
+      Flight Details</div><br>
+      
+                            </div>
+                            
+    </td>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+      <div class="col-sm-2" align="center"> Swiss International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\swiss-international-air-lines-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>07:55</div>
+      <div class="col-sm-2" align="center"> rs 5676 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="second"><br><br>
+      Flight Details</div><br>
+    </div></td>
+    </tr>
+    <tr>
+      <td ><div class="col-sm-12 container" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;">  
+      <br>
+      <div class="col-sm-2" align="center"> Dubai International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\dubai-international-airport-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>07:55</div>
+      <div class="col-sm-2" align="center"> rs 5676 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="first"><br><br>
+        Flight Details</div><br>
+                            
+    </td>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"> 
+     <br>
+      <div class="col-sm-2" align="center"> Dubai International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\dubai-international-airport-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>22:55</div>
+      <div class="col-sm-2" align="center"> rs 5896 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="second"><br><br>
+      Flight Details</div><br>
+    </div></td>
+    </tr>
+
+    <tr>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+      <div class="col-sm-2" align="center"> Swiss International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\swiss-international-air-lines-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>07:55</div>
+      <div class="col-sm-2" align="center"> rs 5676 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="first"><br><br>
+      Flight Details</div><br>
+      
+                            </div>
+                            
+    </td>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"><br>
+      <div class="col-sm-2" align="center"> Swiss International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\swiss-international-air-lines-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>07:55</div>
+      <div class="col-sm-2" align="center"> rs 5676 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="second"><br><br>
+      Flight Details</div><br>
+    </div></td>
+    </tr>
+    <tr>
+      <td ><div class="col-sm-12 container" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;">  
+      <br>
+      <div class="col-sm-2" align="center"> Dubai International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\dubai-international-airport-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>07:55</div>
+      <div class="col-sm-2" align="center"> rs 5676 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="first"><br><br>
+        Flight Details</div><br>
+                            
+    </td>
+      <td ><div class="col-sm-12" align="center" style="color:#303336;background-color:#f1f1f1;border-radius: 50px;border-radius: 5px;"> 
+     <br>
+      <div class="col-sm-2" align="center"> Dubai International<br><img src="C:\Users\Lenovo\Desktop\BOOTSTRAP\dubai-international-airport-logo.png" width="70%"></div>
+      <div class="col-sm-2" align="center"> Dell<br>051;45</div>
+      <div class="col-sm-2" align="center"> 2H 10M<br>Non stop</div>
+      <div class="col-sm-2" align="center"> Bom<br>22:55</div>
+      <div class="col-sm-2" align="center"> rs 5896 </div>
+      <div class="col-sm-2" align="center"><input type="radio" name="second"><br><br>
+      Flight Details</div><br>
+    </div></td>
+    </tr>
+  </table>
+</div>
+  
+</div>
+
+
+
+
+
+</body>
+</html>
